@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<!DOCTYPE html PUBLIC "" ""><HTML><HEAD>
+<META http-equiv="Content-Type" 
+content="text/html; charset=windows-1252"></HEAD>
+<BODY>
+<PRE>{
+  "definitions" : {
+    "record:edu.uillinois.aits.model.avro.AddressEvent" : {
+      "type" : "object",
+      "required" : [ "addressData", "metaData" ],
+      "additionalProperties" : false,
+      "properties" : {
+        "addressData" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "$ref" : "#/definitions/record:edu.uillinois.aits.model.avro.Address"
+          } ]
+        },
+        "metaData" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "$ref" : "#/definitions/record:edu.uillinois.aits.model.avro.EventMetaData"
+          } ]
+        }
+      }
+    },
+    "record:edu.uillinois.aits.model.avro.Address" : {
+      "type" : "object",
+      "required" : [ "uin", "pidm", "type", "sequenceNumber", "street1", "street2", "street3", "city", "state", "county", "zip", "nation", "status", "startDate", "endDate" ],
+      "additionalProperties" : false,
+      "properties" : {
+        "uin" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "string"
+          } ]
+        },
+        "pidm" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "integer",
+            "minimum" : -2147483648,
+            "maximum" : 2147483647
+          } ]
+        },
+        "type" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "$ref" : "#/definitions/record:edu.uillinois.aits.model.avro.CodeDescription"
+          } ]
+        },
+        "sequenceNumber" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "integer",
+            "minimum" : -2147483648,
+            "maximum" : 2147483647
+          } ]
+        },
+        "street1" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "string"
+          } ]
+        },
+        "street2" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "string"
+          } ]
+        },
+        "street3" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "string"
+          } ]
+        },
+        "city" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "string"
+          } ]
+        },
+        "state" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "$ref" : "#/definitions/record:edu.uillinois.aits.model.avro.CodeDescription"
+          } ]
+        },
+        "county" : {
+          "default" : "null",
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "$ref" : "#/definitions/record:edu.uillinois.aits.model.avro.CodeDescription"
+          } ]
+        },
+        "zip" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "string"
+          } ]
+        },
+        "nation" : {
+          "default" : "null",
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "$ref" : "#/definitions/record:edu.uillinois.aits.model.avro.CodeDescription"
+          } ]
+        },
+        "status" : {
+          "default" : "null",
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "string"
+          } ]
+        },
+        "startDate" : {
+          "default" : "null",
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "integer",
+            "minimum" : -9223372036854775808,
+            "maximum" : 9223372036854775807
+          } ]
+        },
+        "endDate" : {
+          "default" : "null",
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "integer",
+            "minimum" : -9223372036854775808,
+            "maximum" : 9223372036854775807
+          } ]
+        }
+      }
+    },
+    "record:edu.uillinois.aits.model.avro.CodeDescription" : {
+      "type" : "object",
+      "required" : [ "code", "description" ],
+      "additionalProperties" : false,
+      "properties" : {
+        "code" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "string"
+          } ]
+        },
+        "description" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "string"
+          } ]
+        }
+      }
+    },
+    "record:edu.uillinois.aits.model.avro.EventMetaData" : {
+      "type" : "object",
+      "required" : [ "event", "object", "source" ],
+      "additionalProperties" : false,
+      "properties" : {
+        "event" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "$ref" : "#/definitions/record:edu.uillinois.aits.model.avro.Event"
+          } ]
+        },
+        "object" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "$ref" : "#/definitions/record:edu.uillinois.aits.model.avro.Object"
+          } ]
+        },
+        "source" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "$ref" : "#/definitions/record:edu.uillinois.aits.model.avro.Source"
+          } ]
+        }
+      }
+    },
+    "record:edu.uillinois.aits.model.avro.Event" : {
+      "type" : "object",
+      "required" : [ "activity", "dateTime", "id" ],
+      "additionalProperties" : false,
+      "properties" : {
+        "activity" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "string"
+          } ]
+        },
+        "dateTime" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "integer",
+            "minimum" : -9223372036854775808,
+            "maximum" : 9223372036854775807
+          } ]
+        },
+        "id" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "integer",
+            "minimum" : -2147483648,
+            "maximum" : 2147483647
+          } ]
+        }
+      }
+    },
+    "record:edu.uillinois.aits.model.avro.Object" : {
+      "type" : "object",
+      "required" : [ "name", "version" ],
+      "additionalProperties" : false,
+      "properties" : {
+        "name" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "string"
+          } ]
+        },
+        "version" : {
+          "default" : 1,
+          "type" : "integer",
+          "minimum" : -2147483648,
+          "maximum" : 2147483647
+        }
+      }
+    },
+    "record:edu.uillinois.aits.model.avro.Source" : {
+      "type" : "object",
+      "required" : [ "application", "store" ],
+      "additionalProperties" : false,
+      "properties" : {
+        "application" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "string"
+          } ]
+        },
+        "store" : {
+          "oneOf" : [ {
+            "type" : "null"
+          }, {
+            "type" : "string"
+          } ]
+        }
+      }
+    }
+  },
+  "$ref" : "#/definitions/record:edu.uillinois.aits.model.avro.AddressEvent"
+}</PRE></BODY></HTML>
