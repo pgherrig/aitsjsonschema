@@ -1,9 +1,4 @@
-<!DOCTYPE HTML>
-<!DOCTYPE html PUBLIC "" ""><HTML><HEAD>
-<META http-equiv="Content-Type" 
-content="text/html; charset=windows-1252"></HEAD>
-<BODY>
-<PRE>{
+{
   "definitions" : {
     "record:edu.uillinois.aits.model.avro.AddressEvent" : {
       "type" : "object",
@@ -275,4 +270,4 @@ content="text/html; charset=windows-1252"></HEAD>
     }
   },
   "$ref" : "#/definitions/record:edu.uillinois.aits.model.avro.AddressEvent"
-}</PRE></BODY></HTML>
+}
